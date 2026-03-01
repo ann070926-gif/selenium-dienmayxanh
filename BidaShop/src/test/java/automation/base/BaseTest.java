@@ -13,18 +13,16 @@ import java.time.Duration;
 public class BaseTest {
 
     protected WebDriver driver;
-    protected WebDriverWait wait;
 
     @BeforeMethod
     public void setUp() {
-
         ChromeOptions options = new ChromeOptions();
-options.addArguments("--headless=new");
-options.addArguments("--no-sandbox");
-options.addArguments("--disable-dev-shm-usage");
-options.addArguments("--disable-gpu");
+        options.addArguments("--headless=new");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--disable-gpu");
 
-WebDriver driver = new ChromeDriver(options);
+        driver = new ChromeDriver(options);
     }
 
     @AfterMethod
