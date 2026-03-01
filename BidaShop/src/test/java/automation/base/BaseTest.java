@@ -1,6 +1,5 @@
 package automation.base;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -13,6 +12,7 @@ import java.time.Duration;
 public class BaseTest {
 
     protected WebDriver driver;
+    protected WebDriverWait wait;   // THÊM DÒNG NÀY
 
     @BeforeMethod
     public void setUp() {
@@ -23,6 +23,8 @@ public class BaseTest {
         options.addArguments("--disable-gpu");
 
         driver = new ChromeDriver(options);
+
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10)); // THÊM DÒNG NÀY
     }
 
     @AfterMethod
