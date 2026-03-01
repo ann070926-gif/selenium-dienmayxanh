@@ -23,3 +23,5 @@ jobs:
       - name: Build and Test with Maven
         run: mvn clean test
         working-directory: BidaShop
+        env:
+            DISPLAY: ":99"
