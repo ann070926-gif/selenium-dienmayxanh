@@ -21,7 +21,5 @@ jobs:
           java-version: '21'
 
       - name: Build and Test with Maven
-        run: mvn clean test
         working-directory: BidaShop
-        env:
-            DISPLAY: ":99"
+        run: mvn clean test -Djava.awt.headless=true
