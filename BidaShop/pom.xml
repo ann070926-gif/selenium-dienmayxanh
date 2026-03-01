@@ -11,11 +11,10 @@
     <packaging>jar</packaging>
 
     <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>21</maven.compiler.source>
-        <maven.compiler.target>21</maven.compiler.target>
-        <exec.mainClass>bida.shop.ui.WelcomeJDialog</exec.mainClass>
-    </properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.release>21</maven.compiler.release>
+    <exec.mainClass>bida.shop.ui.WelcomeJDialog</exec.mainClass>
+</properties>
 
     <dependencies>
 
@@ -104,23 +103,22 @@
 
             <!-- ================= COMPILER ================= -->
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.13.0</version>
-                <configuration>
-                    <source>21</source>
-                    <target>21</target>
-                    <annotationProcessors>
-                        <annotationProcessor>
-                            lombok.launch.AnnotationProcessorHider$AnnotationProcessor
-                        </annotationProcessor>
-                    </annotationProcessors>
-                    <compilerArgs>
-                        <arg>-Xlint</arg>
-                    </compilerArgs>
-                    <showWarnings>true</showWarnings>
-                </configuration>
-            </plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-compiler-plugin</artifactId>
+    <version>3.13.0</version>
+    <configuration>
+        <release>21</release>
+        <annotationProcessors>
+            <annotationProcessor>
+                lombok.launch.AnnotationProcessorHider$AnnotationProcessor
+            </annotationProcessor>
+        </annotationProcessors>
+        <compilerArgs>
+            <arg>-Xlint</arg>
+        </compilerArgs>
+        <showWarnings>true</showWarnings>
+    </configuration>
+</plugin>
 
             <!-- ================= SUREFIRE ================= -->
             <plugin>
