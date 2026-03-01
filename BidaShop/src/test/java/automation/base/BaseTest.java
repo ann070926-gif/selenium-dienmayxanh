@@ -18,15 +18,13 @@ public class BaseTest {
     @BeforeMethod
     public void setUp() {
 
-        WebDriverManager.chromedriver().setup();
-
         ChromeOptions options = new ChromeOptions();
-        driver = new ChromeDriver(options);
+options.addArguments("--headless=new");
+options.addArguments("--no-sandbox");
+options.addArguments("--disable-dev-shm-usage");
+options.addArguments("--disable-gpu");
 
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-
-        wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+WebDriver driver = new ChromeDriver(options);
     }
 
     @AfterMethod
